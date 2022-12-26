@@ -5,8 +5,56 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mini Ecommerce</title>
+    
 </head>
+<link rel="stylesheet" href="style.css">
+<script
+       src="https://kit.fontawesome.com/24c494a6b6.js"
+       crossorigin="anonymous"
+></script>
 <body>
-    <h1>Hello World</h1>
+    <nav>
+        <div class="logo"><h1>Logo</h1></div>
+        <div class="openMenu"><i class="fa fa-bars"></i></div>
+        <ul class="mainMenu">
+            <li><a href="">Home</a></li>
+            <li><a href="">Product</a></li>
+            <li><a href="">Cart</a></li>
+            <li><a href="">SignIn</a></li>
+            <div class="closeMenu"><i class="fa fa-times"></i></div>
+            <span class="icons">
+                <i class="fab fa-facebook"></i>
+                <i class="fab fa-instagram"></i>
+                <i class="fab fa-github"></i>
+                <i class="fab fa-twitter"></i>
+            </span>
+        </ul>
+    </nav>
 </body>
 </html>
+
+<script>
+    const mainMenu = document.querySelector('.mainMenu');
+    const closeMenu = document.querySelector('.closeMenu');
+    const openMenu = document.querySelector('.openMenu');
+    const menu_items = document.querySelectorAll("nav .mainMenu li a");
+
+
+    openMenu.addEventListener('click',show)
+    closeMenu.addEventListener('click',close);
+
+    menu_items.forEach(item =>{
+        item.addEventListener('click', function(){
+            close();
+        })
+    })
+
+    function show(){
+        mainMenu.style.display = "flex";
+        mainMenu.style.top = '0'
+    }
+    function close(){
+        mainMenu.style.top = '-100%'
+    }
+    close()
+</script>
