@@ -1,0 +1,87 @@
+.category{
+    margin-top: 60px;
+    margin-left: 25px;
+    /* border: 1px solid red; */
+    border-radius: 5px;
+    height: 50px;
+    width: 290px;
+    font-family: Arial, sans-serif;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    position: fixed;
+}
+.display-flex{
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    /* row-gap: 50px; */
+}
+@media (max-width:1000px) {
+    .display-flex{
+        display: grid;
+        grid-template-columns: repeat(3,1fr);
+        /* row-gap: 50px; */
+    }
+    .category{
+        margin-top: 60px;
+        margin-left: 25px;
+        /* border: 1px solid red; */
+        border-radius: 5px;
+        height: 50px;
+        width: 90%;
+        font-family: Arial, sans-serif;
+        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    }
+    
+}
+@media (max-width:800px) {
+    .display-flex{
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+        /* row-gap: 50px; */
+    }
+    .category{
+        margin-top: 60px;
+        margin-left: 25px;
+        /* border: 1px solid red; */
+        border-radius: 5px;
+        height: 50px;
+        width: 90%;
+        font-family: Arial, sans-serif;
+        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    }
+    
+}
+@media (max-width:600px) {
+    .display-flex{
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+        /* row-gap: 50px; */
+    }
+    .category{
+        margin-top: 60px;
+        margin-left: 25px;
+        /* border: 1px solid red; */
+        border-radius: 5px;
+        height: 50px;
+        width: 90%;
+        font-family: Arial, sans-serif;
+        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    }
+}
+@media (max-width:520px) {
+    .display-flex{
+        display: grid;
+        grid-template-columns: repeat(1,1fr);
+        /* row-gap: 50px; */
+    }
+    .category{
+        margin-top: 60px;
+        margin-left: 25px;
+        /* border: 1px solid red; */
+        border-radius: 5px;
+        height: 50px;
+        width: 90%;
+        font-family: Arial, sans-serif;
+        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    }
+    
+}

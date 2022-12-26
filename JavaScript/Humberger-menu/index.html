@@ -7,7 +7,8 @@
     <title>Mini Ecommerce</title>
     
 </head>
-<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="Style/index.css">
+<link rel="stylesheet" href="Style/style.css">
 <script
        src="https://kit.fontawesome.com/24c494a6b6.js"
        crossorigin="anonymous"
@@ -17,9 +18,8 @@
         <div class="logo"><h1>Logo</h1></div>
         <div class="openMenu"><i class="fa fa-bars"></i></div>
         <ul class="mainMenu">
-            <li><a href="">Home</a></li>
-            <li><a href="">Product</a></li>
-            <li><a href="">Cart</a></li>
+            <li><a href="./index.html">Home</a></li>
+            <li><a href="./cart.html">Cart</a></li>
             <li><a href="">SignIn</a></li>
             <div class="closeMenu"><i class="fa fa-times"></i></div>
             <span class="icons">
@@ -30,31 +30,57 @@
             </span>
         </ul>
     </nav>
+    <div class="display-flex">
+    <div >
+        <select  name="" onclick='handlevalue(value)' class="category">
+            <option value="">-:Filter By Category:-</option>
+            <option value="smartphones">smartphones</option>
+            <option value="laptops">Laptops</option>
+            <option value="fragrances">Fragrances</option>
+            <option value="skincare">skincare</option>
+            <option value="groceries">Groceries</option>
+            <option value="home-decoration">home-decoration</option>
+            <option value="skincare">skincare</option>
+            <option value="groceries">groceries</option>
+        </select>
+    </div>
+    <div >
+        <select  name="" onclick='handlevalueByBrand(value)' class="category">
+            <option value="">-:Filter By Brand:-</option>
+            <option value="Apple">Apple</option>
+            <option value="Samsung">Samsung</option>
+            <option value="OPPO">OPPO</option>
+            <option value="Microsoft Surface">Microsoft Surface</option>
+            <option value="Infinix">Infinix</option>
+            <option value="HP Pavilion">HP Pavilion</option>
+            <option value="Fog Scent Xpressio">Fog Scent Xpressio</option>
+            <option value="fauji">fauji</option>
+        </select>
+    </div>
+    <div>
+        <select name="" class="category" onclick="handlesort(value)">
+            <option value="">-:Sort By Price:-</option>
+            <option value="desc">High To Low</option>
+            <option value="asc">Low To High</option>
+        </select>
+    </div>
+    <div>
+        <select name="" class="category" onclick="handlesortByalpha(value)">
+            <option value="">-:Sort By Alphabetical:-</option>
+            <option value="desc">High To Low</option>
+            <option value="asc">Low To High</option>
+        </select>
+    </div>
+</div>   
+    <div class="container"></div>
 </body>
 </html>
 
+<script src="./Script/index.js"></script>
+<script src="./script/FetchData.js"></script>
+
 <script>
-    const mainMenu = document.querySelector('.mainMenu');
-    const closeMenu = document.querySelector('.closeMenu');
-    const openMenu = document.querySelector('.openMenu');
-    const menu_items = document.querySelectorAll("nav .mainMenu li a");
-
-
-    openMenu.addEventListener('click',show)
-    closeMenu.addEventListener('click',close);
-
-    menu_items.forEach(item =>{
-        item.addEventListener('click', function(){
-            close();
-        })
-    })
-
-    function show(){
-        mainMenu.style.display = "flex";
-        mainMenu.style.top = '0'
-    }
-    function close(){
-        mainMenu.style.top = '-100%'
-    }
-    close()
+    var category = document.getElementById("category").value;
+    console.log(category)
+    
 </script>
