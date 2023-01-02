@@ -1,15 +1,17 @@
 var y=[]
+
 fetch("https://miniecommerce-api.onrender.com/products")
-.then((res)=>res.json())
-.then((res)=>{
-    return getData(res),
-    y=res
-})
+// const fetchData =(limit,skip)=>{
+    // fetch(`https://dummyjson.com/products?limit=${limit}&skip=${skip}`)
+    .then((res)=>res.json())
+    .then((res)=>{
+         getData(res),
+        y=res
+    })
+    .catch((err)=>console.log(err));
+// }
+// fetchData(12,24)
 
-
-.catch((err)=>console.log(err));
-// const data1 = document.querySelector("#category").value;
-// console.log(data1)
 function handlevalue(value){
     const data=y.filter((item)=>{
        return item.category==value
@@ -74,7 +76,7 @@ function handlesortByalpha(value){
 
 
 function getData(data) {
-    // console.log(data)
+    console.log(data)
     var container = document.querySelector(".container");
 container.innerHTML=''
     data.map((item)=>{
@@ -101,7 +103,7 @@ container.innerHTML=''
         var Addcart =document.createElement("button");
         Addcart.innerText="AddCart"
         Addcart.addEventListener("click",function(){
-            deletitem(item)
+            AddtoCart(item)
         })
         Addcart.setAttribute("class","checkout")
         box.append(image,title,category,brand,price,checkout,Addcart)
@@ -118,7 +120,8 @@ const SinglePage = (data)=>{
     location.replace("./product.html")
 }
 
-const deletitem =(data)=>{
+const AddtoCart =(data)=>{
+    // console.log(data)
     arr.push(data)
     localStorage.setItem("cartitem",JSON.stringify(arr))
     alert("Item Add Successful")
