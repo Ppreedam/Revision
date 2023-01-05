@@ -4,9 +4,62 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>TodoList</title>
 </head>
+<link rel="stylesheet" href="index.css">
+<script
+       src="https://kit.fontawesome.com/24c494a6b6.js"
+       crossorigin="anonymous"
+></script>
 <body>
-    <h1>TodoList</h1>
+    <Nav>
+        <div class="logo"><h1>TodoList</h1></div>
+        <div class="openMenu"><i class="fa fa-bars"></i></div>
+        <ul class="mainMenu">
+            
+            <div class="closeMenu"><i class="fa fa-times"></i></div>
+            
+        </ul>
+    </Nav>
+
+    <div style="margin-top: 90px;">
+        <label for="">Add Your Todolist
+        </label><br>
+        <input type="text" placeholder="Enter Your todo" id="inputtodo">
+        <button id="submit">Add Todo</button>
+    </div>
+    <div class="container"></div>
 </body>
 </html>
+<script src="./Script/Index.js"></script>
+<script>
+    const mainMenu = document.querySelector('.mainMenu');
+    const closeMenu = document.querySelector('.closeMenu');
+    const openMenu = document.querySelector('.openMenu');
+    const menu_items = document.querySelectorAll("nav .mainMenu li a");
+
+
+    openMenu.addEventListener('click',show)
+    closeMenu.addEventListener('click',close);
+
+    menu_items.forEach(item =>{
+        item.addEventListener('click', function(){
+            close();
+        })
+    })
+
+    function show(){
+        mainMenu.style.display = "flex";
+        mainMenu.style.top = '0'
+    }
+    function close(){
+        mainMenu.style.top = '-100%'
+    }
+    close()
+
+
+
+    
+
+
+</script>

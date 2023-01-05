@@ -1,0 +1,51 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Edit Todo</h1>
+    <div>
+        <input type="text" placeholder="Enter Edit todo data" id="editinput">
+        <button id="submit">Edit Confirm</button>
+    </div>
+    <button onclick="Redirect()">Go To HomePage</button>
+</body>
+
+</html>
+
+<script>
+    var data = JSON.parse(localStorage.getItem("todoid"))
+    // console.log(data)
+
+    const myfunction = () => {
+        var editdata = document.getElementById("editinput").value
+        var obj = {
+            name: editdata
+        }
+        // console.log(data)
+        data.map((item) => {
+            console.log(item.id)
+            fetch(`https://miniecommerce-api.onrender.com/Data/${item.id}`, {
+                body: JSON.stringify(obj),
+                method: 'PUT',
+                headers: {
+                    'Content-type': 'application/json'
+                }
+                
+            })
+        })
+        
+        alert("Data update Successful")
+    }
+    document.getElementById("submit").addEventListener("click", myfunction);
+
+    const Redirect=()=>{
+        window.location.href="index.html"
+    }
+
+</script>

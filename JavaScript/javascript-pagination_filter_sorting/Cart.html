@@ -1,0 +1,97 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>cartpage</h1>
+    <div>
+        <h1>Total Price <span id="total"></span></h1>
+    </div>
+    <div class="container"></div>
+</body>
+</html>
+
+<script>
+    var carttotal = document.getElementById("total");
+    // carttotal.innerHTML="price"
+    var Total_price=0;
+    var data=JSON.parse(localStorage.getItem("cart")) || [];
+    var container=document.querySelector(".container");
+    // container.innerHTML=""
+    data.map((item,index)=>{
+        var count=1
+        // console.log(item)
+        var image=document.createElement("img")
+        image.src=item.thumbnail
+        image.setAttribute("class","thumbnail")
+        var box=document.createElement("div");
+        box.setAttribute("class","containerbox")
+        var title = document.createElement("h3")
+        title.innerText=`Title-${item.title}`
+        var brand = document.createElement("p")
+        brand.innerText=`Brand-${item.brand}`
+        var category = document.createElement("p")
+        category.innerText=`Category-${item.category}`
+        var price = document.createElement("p")
+        price.innerText=`Price-₹${item.price}`
+        var addcart = document.createElement("button")
+        addcart.innerText="Delet"
+        addcart.addEventListener("click",function(){
+            data.splice(index,1);
+            localStorage.setItem("cart", JSON.stringify(data))
+            window.location.reload();
+        })
+        var checkout = document.createElement("button")
+        checkout.innerText="CheckOut"
+        checkout.addEventListener("click",function(){
+            redirectpage(item)
+        })
+        var totalprice=document.createElement("p");
+        Total_price=Total_price+Number(item.price);
+        carttotal.innerText=Total_price
+
+
+        var inc_button = document.createElement("button");
+        inc_button.innerText="+"
+        inc_button.addEventListener("click",()=>{
+            count=count+1 // for count decrement
+            spantag.innerText=count //for updating the count value
+            totalprice.innerText=`Total-price-${item.price*count}` //update the total price
+            total=total+(item.ptice*count);
+            carttotal.innerHTML=total
+            //for cart product
+            Total_price +=(item.price);
+        carttotal.innerText=Total_price
+            
+        })
+        var spantag = document.createElement("butto");
+        spantag.innerText="1"
+        var dec_button = document.createElement("button");
+        dec_button.innerText="-"
+        dec_button.addEventListener("click",()=>{
+            if(count>=2){
+                count=count-1 // for count decrement
+            spantag.innerText=count //for updating the count value
+            totalprice.innerText=`Total Price${item.price*count}` //update the total price
+            // for carttotal
+            Total_price=Total_price-Number(item.price);
+        carttotal.innerText=Total_price
+            }
+            else{
+                count=1
+                spantag.innerText=count
+                
+            // console.log(count)
+            }
+        })
+        var boxbuuton = document.createElement("div");
+        boxbuuton.append(inc_button,spantag,dec_button);
+
+        box.append(image,title,brand,category,price,totalprice,boxbuuton,addcart,checkout);
+        container.append(box)
+    })
+    
+</script>

@@ -1,0 +1,47 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>single</h1>
+    <div class="container"></div>
+</body>
+</html>
+<script>
+    var data=JSON.parse(localStorage.getItem("checkout")) || [];
+
+    var container=document.querySelector(".container");
+    // container.innerHTML=""
+    data.map((item)=>{
+        // console.log(item)
+        var image=document.createElement("img")
+        image.src=item.thumbnail
+        image.setAttribute("class","thumbnail")
+        var box=document.createElement("div");
+        box.setAttribute("class","containerbox")
+        var title = document.createElement("h3")
+        title.innerText=`Title-${item.title}`
+        var brand = document.createElement("p")
+        brand.innerText=`Brand-${item.brand}`
+        var category = document.createElement("p")
+        category.innerText=`Category-${item.category}`
+        var price = document.createElement("p")
+        price.innerText=`Price-₹${item.price}`
+        var addcart = document.createElement("button")
+        addcart.innerText="AddCart"
+        addcart.addEventListener("click",function(){
+            addtocart(item)
+        })
+        var checkout = document.createElement("button")
+        checkout.innerText="CheckOut"
+        checkout.addEventListener("click",function(){
+            redirectpage(item)
+        })
+        box.append(image,title,brand,category,price,addcart,checkout);
+        container.append(box)
+    })
+    
+</script>
