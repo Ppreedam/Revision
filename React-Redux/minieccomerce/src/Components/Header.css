@@ -1,0 +1,40 @@
+.navbar {
+    background: purple;
+}
+
+.product {
+    margin-top: 5px;
+    /* margin-right: 40px; */
+    padding: 20px;
+
+}
+
+.home {
+    margin-top: 5px;
+}
+
+.cart {
+    margin-top: 5px;
+}
+
+@media (max-width:990px) {
+    .product{
+        padding: 1px;
+    }
+
+    .cart {
+        margin-left: 3px;
+
+    }
+}
+
+.cartaccount {
+    height: 500px;
+    width: 400px;
+    border: 1px solid red;
+    /* margin-right: -80px; */
+}
+
+.shopping {
+    color: white;
+}

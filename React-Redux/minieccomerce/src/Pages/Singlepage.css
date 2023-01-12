@@ -1,0 +1,52 @@
+.singlepagebox{
+    width: 95%;
+    margin: auto;
+    margin-top: 110px;
+    /* border: 1px solid red; */
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    height: 500px;
+}
+.singlepageboxrow{
+    width: 95%;
+    margin: auto;
+    margin-top: 110px;
+    /* border: 1px solid red; */
+    /* box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px; */
+    height: 500px;
+}
+.singlepageimg{
+    
+    padding: 20px;
+    /* box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px; */
+    /* border: 1px solid red ; */
+   
+}
+.singlepageimg img{
+    height: 250px;
+    width: 400px;
+    border-radius: 10px;
+}
+.singlepageIncdec{
+    margin-left: 50px;
+    /* border: 1px solid red; */
+    width: 30%;
+    text-align: center;
+}
+.singlepagedescription{
+    width: 300px;
+}
+.buttondiv>button{
+    padding: 8px 20px ;
+    border-radius: 5px;
+    border: none;
+    background-color: purple;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-left: 5px;
+}
+
+.deleticon{
+    color: red;
+    margin-left: 500%;
+    cursor: pointer;
+}

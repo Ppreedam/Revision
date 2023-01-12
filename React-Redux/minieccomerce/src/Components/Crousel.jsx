@@ -4,7 +4,7 @@ import "./Crousel.css"
 function Crousel() {
     
   return (
-    <div className='box'>
+    <div className='crouselbox'>
     <Carousel variant="dark">
       <Carousel.Item>
         <img

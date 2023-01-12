@@ -1,0 +1,98 @@
+.signup {
+    height: calc(100vh - 50px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 50px;
+    /* border: 1px solid red; */
+  }
+  
+  .signupwrapper {
+    width:50%;
+    height: 70%;
+    -webkit-box-shadow: 0px 5px 33px -21px rgba(66, 68, 90, 1);
+    -moz-box-shadow: 0px 5px 33px -21px rgba(66, 68, 90, 1);
+    box-shadow: 0px 5px 33px -21px rgba(66, 68, 90, 1);
+    display: flex;
+    align-items: center;
+    border-radius: 20px;
+    /* border: 1px solid red; */
+  }
+
+  .center{
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+  }
+
+  
+  .loginButton{
+    width: 150px;
+    padding: 15px 25px;
+    border-radius: 5px;
+    color: white;
+    display: flex;
+    align-items: center;
+    font-weight: bold;
+    margin-bottom: 20px;
+    cursor: pointer;
+  }
+  .signupright>input{
+    width: 200px;
+    padding: 15px 20px;
+    margin-bottom: 40px;
+  }
+  
+  .Signupsubmit{
+    width: 200px;
+    background-color: rgba(128, 0, 128, 0.671);
+    color: white;
+    font-weight: bold;
+    border: none;
+    padding: 15px 20px;
+    border-radius: 5px;
+  }
+  
+  .signupTitle{
+    position: absolute;
+    top: 150px;
+    color:lightgray
+  }
+  .signupright{
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+ 
+  @media screen and (max-width: 992px) {
+    .card {
+      width: 100%;
+      margin-bottom: 50px;
+    }
+  
+    .wrapper {
+      width: 65%;
+      height: 40%;
+      flex-direction: column;
+    }
+  
+    .loginTitle {
+      display: none;
+    }
+  
+    .center {
+      width: 100%;
+      position: relative;
+    }
+  
+     
+  
+    .signuprightright {
+      padding: 20px;
+    } 
+  
+    
+  }
