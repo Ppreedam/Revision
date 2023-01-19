@@ -1,0 +1,26 @@
+body{
+    padding: 0px;
+    margin: 0px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.navbar{
+    /* border: 1px solid red ; */
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #04aa6d;
+    height: 70px;
+    
+}
+.navbar ul:nth-child(1){
+    list-style: none;
+    color: white;
+    font-size: 40px;
+}
+.navbar ul:nth-child(2){
+    list-style: none;
+    
+    color: white;
+    font-size: 20px;
+}
