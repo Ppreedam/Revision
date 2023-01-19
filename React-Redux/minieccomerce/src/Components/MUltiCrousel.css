@@ -1,0 +1,20 @@
+.img{
+    height: 200px;
+    width: 220px;
+    
+    margin-top: 20px;
+}
+.multicrousel{
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    text-align: center;
+    height: 340px;
+    width: 270px;
+    /* border: 1px solid red; */
+ } 
+.crouselmainbox{ 
+    border: 1px solid red;
+     margin-top: 40px;
+    height: 400px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px; 
+ } 
+ 

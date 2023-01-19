@@ -12,13 +12,14 @@ const Information = () => {
         // console.log(randomnumber)
         setRandom(randomnumber)
     },[])
-    console.log(random)
+    // console.log(random)
     function handlechange(e){
         setData(e.target.value)
     }
     function handleverification(){
         if(data==random){
             alert("Checkout Successful")
+            window.location.reload()
         }
         else{
             alert("Please Enter Valid OTP")

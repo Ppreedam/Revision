@@ -1,13 +1,17 @@
 import React from 'react'
 import Allroutes from './AllRoutes/Allroutes'
 import Headers from "./Components/Headers"
-import Home from './Pages/Home'
+import MultiCrousel from './Components/MultiCrousel'
+
+
+
 
 const App = () => {
   return (
     <div>
     <Headers/>
     <Allroutes/>
+    
     
     </div>
   )

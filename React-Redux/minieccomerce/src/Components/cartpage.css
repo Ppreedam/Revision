@@ -53,7 +53,7 @@ hr{
 
 .checkout{
     border: none;
-    background-color: purple;
+    background-color: rgb(57, 7, 57);
     color: white;
     font-family: Arial, Helvetica, sans-serif;
     padding: 5px 10px ;
@@ -62,7 +62,7 @@ hr{
 .checkout:hover{
     border: none;
     background-color: rgb(225, 115, 115);
-    color: purple;
+    color: rgb(52, 4, 52);
     font-family: Arial, Helvetica, sans-serif;
     padding: 9px 10px ;
     border-radius: 5px;

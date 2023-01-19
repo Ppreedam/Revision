@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from "react-redux"
 import { Addtocart, getData } from '../Redux/Appreducer/action'
-import Button from 'react-bootstrap/Button';
+
 import Card from 'react-bootstrap/Card';
 import Rating from '@mui/material/Rating';
 import { ButtonGroup } from '@mui/material';
@@ -15,6 +15,7 @@ const Product = () => {
   const dispatch = useDispatch()
   const [data, setData]=useState([])
   const [filterdata, setFilterData]=useState([]);
+  const [sortstate, setState]=useState([]);
   
   const product = useSelector((state) => state.Appreducer?.product?.products);
   
@@ -24,11 +25,12 @@ const Product = () => {
   
 
   useEffect(() => {
-    if(product==undefined){
+    if(product===undefined){
       dispatch(getData())
     }
     setData(product)
     setFilterData(product)
+    setState(product)
   }, [product])
 
   function SendDatatocart(value){
@@ -39,16 +41,70 @@ const Product = () => {
   const handlecategory=(e)=>{
     const {value}=e.target;
     const productfilter=filterdata.filter((el)=>{
-      return el.category==value
+      return el.category===value
     })
     console.log(productfilter)
     setData(productfilter)
   }
 
-  // useEffect(()=>{
-    
-  // },[filterdata])
+  function handlebrand(e){
+    const {value}=e.target
+    if(!value){
+      setData(product)
+    }
+    else{
+      const brandData=filterdata.filter((el)=>{
+      return el.brand===value;
+    })
+    setData(brandData)
+    }
+  }
 
+  const handlesortprice=(e)=>{
+    const {value}=e.target
+    if(!value){
+      setData(product)
+    }
+    else{
+      const {value}=e.target;
+    if(value==="asc"){
+      const sortdata =sortstate.sort((a,b)=>{
+        return a.price-b.price
+      })
+      setData(sortdata)
+      // console.log(sortdata)
+    }
+    else if(value==="desc"){
+      const sortdata =sortstate.sort((a,b)=>{
+        return b.price-a.price
+      })
+      setData(sortdata)
+      // console.log(sortdata)
+    }
+    }
+  }
+
+  function handlesortalpha(e){
+    const {value}=e.target;
+    if(value==="asc"){
+      const sortdata =sortstate.sort((a,b)=>{
+        if(a.title<b.title){
+          return -1
+        }
+      })
+      setData(sortdata)
+      console.log(sortdata)
+    }
+    else if(value==="desc"){
+      const sortdata =sortstate.sort((a,b)=>{
+        if(b.title<a.title){
+          return -1
+        }
+      })
+      setData(sortdata)
+      console.log(sortdata)
+    }
+  }
 
 
   return (
@@ -68,7 +124,7 @@ const Product = () => {
         </select>
     </div>
     <div >
-        <select  name=""  class="category">
+        <select  name=""  class="category" onChange={(e)=>handlebrand(e)}>
             <option value="">-:Filter By Brand:-</option>
             <option value="Apple">Apple</option>
             <option value="Samsung">Samsung</option>
@@ -81,14 +137,14 @@ const Product = () => {
         </select>
     </div>
     <div>
-        <select name="" class="category" >
+        <select name="" class="category" onChange={(e)=>handlesortprice(e)} >
             <option value="">-:Sort By Price:-</option>
             <option value="desc">High To Low</option>
             <option value="asc">Low To High</option>
         </select>
     </div>
     <div>
-           <select name="" class="category" >
+           <select name="" class="category" onChange={(e)=>handlesortalpha(e)}>
             <option value="">-:Sort By Alphabetical:-</option>
             <option value="desc">High To Low</option>
             <option value="asc">Low To High</option>

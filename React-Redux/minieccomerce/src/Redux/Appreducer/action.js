@@ -3,7 +3,7 @@ import axios from "axios";
 
 export const getData =()=>(dispatch)=>{
   dispatch({type:types.GET_DATA_REQUEST});
-  axios(`https://dummyjson.com/products?limit=${12}&skip=${0}`)
+  axios(`https://dummyjson.com/products?limit=${100}&skip=${0}`)
   // .then((res)=>res.json())
   .then((res)=>{
     // console.log(res)

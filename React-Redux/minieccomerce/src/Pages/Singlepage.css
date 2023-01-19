@@ -21,10 +21,10 @@
     /* border: 1px solid red ; */
    
 }
-.singlepageimg img{
+.thumbnail{
     height: 250px;
-    width: 400px;
-    border-radius: 10px;
+    width: 500px;
+    border-radius: 10px solid black;
 }
 .singlepageIncdec{
     margin-left: 50px;
@@ -49,4 +49,19 @@
     color: red;
     margin-left: 500%;
     cursor: pointer;
+}
+.smallimagebox{
+    display: flex;
+    gap: 20px;
+    margin-top: 20px;
+    /* border: 1px solid yellow; */
+}
+.smallimagebox>div{
+    width: 84px;
+    /* border: 1px solid red; */
+}
+.smallimage{
+    height: 80px;
+    width: 100%;
+    /* border: 1px solid red; */
 }
